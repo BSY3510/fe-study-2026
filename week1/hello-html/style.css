@@ -1,0 +1,16 @@
+body {
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+}
+
+button {
+    background-color: orange;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
