@@ -20,11 +20,8 @@ async function handleSearch() {
     }
 }
 
-searchBtn.addEventListener('click', () => {
-    const username = input.value;
-    if (username) handleSearch(username);
-});
+searchBtn.addEventListener('click', handleSearch);
 
 input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter' && input.value) handleSearch(input.value);
+    if (e.key === 'Enter') handleSearch();
 })
