@@ -1,5 +1,5 @@
-import { fetchUser } from "./api";
-import { displayProfile, hideLoading, showError, showLoading } from "./ui";
+import { fetchUser } from "./api.js";
+import { displayProfile, hideLoading, showError, showLoading } from "./ui.js";
 
 const input = document.getElementById('username');
 const searchBtn = document.getElementById('search-btn');

@@ -9,6 +9,3 @@ export async function fetchUser(username) {
 
     return await response.json();
 }
-
-
-
