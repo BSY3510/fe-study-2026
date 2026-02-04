@@ -32,5 +32,5 @@ export function displayProfile(data) {
 }
 
 export function showError(message) {
-    alert(error.message);
+    alert(message);
 }
