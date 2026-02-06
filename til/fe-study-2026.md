@@ -52,3 +52,33 @@
 - 문자열만 저장 가능, 객체나 배열을 넣으려면 변환 과정 필요
     - JSON.stringify(데이터): 객체/배열 -> 문자열
     - JSON.parse(문자열): 문자열 -> 객체/배열
+
+# week3
+## 비동기 처리
+- 요청을 보내고 다음 줄을 실행하며 응답이 오면 나중에 알림
+- async/await 문법
+    - Callback이나 .then() 체이닝 방식과 달리 어느 부분에서 오류가 발생하였는지 확인 용이
+
+## .hidden 클래스
+- 요소를 숨겼다 보여주는 기법에 활용
+- display: none;
+
+## JS로 API 호출
+1. API 요청: await fetch(url);
+2. 상태 코드 확인: if문
+3. JSON 변환: (비동기) await response.json();
+
+## alert
+- alert창 띄움
+- alert(message);
+
+## 구조 분해 할당
+- 객체 안에 여러 값들이 있는 경우 이들을 꺼내서 같은 이름의 변수에 할당 가능
+- ex. const {url, name, bio} = data;
+
+## 모듈 시스템
+1. 서버와 통신하는 로직 담당
+2. 화면을 그리는 로직 담당
+3. 모듈을 연결하는 로직
+- script 태그 type="module" 추가로 브라우저에게 모듈 사용 표시
+- <span style="color:red">**※ 주의: 브라우저 보안 정책상 모듈 시스템은 로컬 파일 경로로 직접 열 경우 작동하지 않을 수 있다.(CORS 오류 발생)**</span>
