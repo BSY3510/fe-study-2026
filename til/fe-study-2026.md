@@ -103,3 +103,13 @@
     - 소스 코드, main.jsx(프로그램 진입점), App.jsx(메인 페이지 컴포넌트), index.css(전역 스타일)
 - package.json
     - 프로젝트 설정 및 의존성 목록
+
+
+# week5
+## 컴포넌트 분리
+- 컴포넌트 조립을 할 수 있게 분리를 하면 재사용성과 유지보수성에 용이
+- src/components 패키지에서 구현
+
+## Props(Properties)
+- 부모 컴포넌트가 자식 컴포넌트에게 데이터를 넘겨줄 때 사용
+- 데이터는 위에서 아래로만 흐른다(Unidirectional Data Flow)
