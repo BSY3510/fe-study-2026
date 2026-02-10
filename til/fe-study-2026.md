@@ -82,3 +82,24 @@
 3. 모듈을 연결하는 로직
 - script 태그 type="module" 추가로 브라우저에게 모듈 사용 표시
 - <span style="color:red">**※ 주의: 브라우저 보안 정책상 모듈 시스템은 로컬 파일 경로로 직접 열 경우 작동하지 않을 수 있다.(CORS 오류 발생)**</span>
+
+# week4
+## FrontEnd Tool
+- Node.js & npm
+    - 자바스크립트 실행 환경 / 라이브러리 관리 도구
+- Vite
+    - 프론트엔드 빌드 도구
+    - 모듈 연결, 코드 압축, 서버 실행 등
+- React
+    - UI를 만들기 위한 라이브러리
+    - 데이터(State)가 변하면, 화면(UI)이 바뀜
+
+## 패키지 구조
+- node_modules/
+    - 라이브러리들이 저장되는 곳
+- public/
+    - 이미지, 폰트 같은 정적 파일 저장소
+- src/
+    - 소스 코드, main.jsx(프로그램 진입점), App.jsx(메인 페이지 컴포넌트), index.css(전역 스타일)
+- package.json
+    - 프로젝트 설정 및 의존성 목록
