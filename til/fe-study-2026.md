@@ -113,3 +113,14 @@
 ## Props(Properties)
 - 부모 컴포넌트가 자식 컴포넌트에게 데이터를 넘겨줄 때 사용
 - 데이터는 위에서 아래로만 흐른다(Unidirectional Data Flow)
+
+
+# week6
+## React useEffect
+- useEffect 훅(Hook): 컴포넌트 생명주기 제어
+- 마운트(Mount): ```useEffect(() => {}, [])``` - 컴포넌트 처음 렌더링 시 1회 실행
+    - 빈 배열 [] -> 초기화 작업
+- 업데이트(Update): ```useEffect(() => {}, [data])``` - 의존성 배열 값 변경 시 실행
+    - [data] -> 상태 변경 감지
+- 언마운트(Unmount): ```useEffect(() => {return () => {}})``` - 컴포넌트 제거 전 정리 작업
+    - return () => {} -> 정리 작업
