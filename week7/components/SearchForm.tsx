@@ -1,13 +1,13 @@
 import {useState, useEffect, useRef} from 'react';
 import '../App.css';
 
-function SearchForm({onSearch, loading}) {
+function SearchForm({onSearch, loading}: {onSearch: (input: string) => void; loading: boolean}) {
     const [input, setInput] = useState('');
 
-    const inputRef = useRef(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        inputRef.current.focus();
+        inputRef.current?.focus();
         console.log("검색창 준비 완료");
     }, []);
 

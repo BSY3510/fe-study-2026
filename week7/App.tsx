@@ -3,12 +3,23 @@ import './App.css'
 import SearchForm from './components/SearchForm';
 import UserProfile from './components/UserProfile';
 
-function App() {
-    const [userData, setUserData] = useState(null); // 유저 정보
-    const [loading, setLoading] = useState(false);  // 로딩 중 여부
-    const [error, setError] = useState(null);       // 에러 메시지
+export interface GithubUser {
+    login: string;
+    avatar_url: string;
+    name: string | null;
+    bio: string | null;
+    followers: number;
+    following: number;
+    public_repos: number;
+    html_url: string;
+}
 
-    const [history, setHistory] = useState(() => {
+function App() {
+    const [userData, setUserData] = useState<GithubUser | null>(null); // 유저 정보
+    const [loading, setLoading] = useState<boolean>(false);  // 로딩 중 여부
+    const [error, setError] = useState<string | null>(null);       // 에러 메시지
+
+    const [history, setHistory] = useState<string[]>(() => {
         const savedHistory = localStorage.getItem('github_history');
         return savedHistory ? JSON.parse(savedHistory) : [];
     });
@@ -17,7 +28,7 @@ function App() {
         localStorage.setItem('github_history', JSON.stringify(history));
     }, [history]);
 
-    const fetchGithubUser = async (username) => {
+    const fetchGithubUser = async (username: string) => {
         if (!username) return;
 
         setLoading(true);
@@ -40,13 +51,13 @@ function App() {
             });
 
         } catch (err) {
-            setError(err.message);
+            setError((err as Error).message);
         } finally {
             setLoading(false);
         }
     };
 
-    const removeHistory = (target, e) => {
+    const removeHistory = (target: string, e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setHistory(prev => prev.filter(item => item !== target));
     };

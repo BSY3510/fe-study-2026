@@ -1,6 +1,7 @@
 import '../App.css';
+import { GithubUser } from '../App.tsx';
 
-function UserProfile({user}) {
+function UserProfile({user}: {user: GithubUser | null}) {
     if (!user) return null;
 
     return (
